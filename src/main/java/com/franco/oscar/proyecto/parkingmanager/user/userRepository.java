@@ -2,7 +2,6 @@ package com.franco.oscar.proyecto.parkingmanager.user;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
 
 public class userRepository {
     private ArrayList<User> usuarios;
