@@ -3,6 +3,8 @@ package com.franco.oscar.proyecto.parkingmanager.user;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+@Repository
 public class userRepository {
     private ArrayList<User> usuarios;
     public userRepository() {
