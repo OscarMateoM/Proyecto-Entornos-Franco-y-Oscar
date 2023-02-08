@@ -11,11 +11,11 @@ public class testUser {
     @Test
     public void check_user_name() {
         // Arrange
-        User david = new User("Oscar", "Mateo",  "Martin", null);
+        User oscar = new User("Oscar", "Mateo",  "Martin", null);
         String expected = "Oscar";
 
         // Act
-        String actual = david.getFirstName();
+        String actual = oscar.getFirstName();
 
 
         // Assert
