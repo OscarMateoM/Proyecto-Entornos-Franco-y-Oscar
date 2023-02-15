@@ -16,10 +16,6 @@ public class testUser {
 
         // Act
         String actual = oscar.getFirstName();
-<<<<<<< HEAD
-=======
-
->>>>>>> 20a377156890c42a22385869fca92d581c3de77c
 
         // Assert
         assertEquals(expected, actual);
