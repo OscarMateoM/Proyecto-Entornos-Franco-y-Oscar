@@ -13,7 +13,7 @@ public class userController {
 
     @GetMapping("/usuarios")
     public String displayUsers(Model model) {
-        model.addAttribute( "users", repository.getAll());
+        model.addAttribute( "users", repository.findAll());
         return "listausuarios";
     }
 }
