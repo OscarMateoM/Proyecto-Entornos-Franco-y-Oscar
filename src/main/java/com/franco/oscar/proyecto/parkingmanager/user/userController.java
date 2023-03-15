@@ -14,6 +14,11 @@ public class userController {
     @GetMapping("/usuarios")
     public String displayUsers(Model model) {
         model.addAttribute( "users", repository.findAll());
-        return "listausuarios";
+        return "user/listausuarios";
+    }
+
+    @GetMapping("/newUser")
+    public String showUserCreateForm(Model model) {
+        return "user/newuserform";
     }
 }
