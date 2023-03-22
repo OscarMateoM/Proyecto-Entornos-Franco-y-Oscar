@@ -1,13 +1,13 @@
 package com.franco.oscar.proyecto.parkingmanager.sorteo;
-import java.util.Date;
+
 
 public class sorteo {
 
     private String descripcion;
-    private Date fecha;
+    private String fecha;
     private String estado;
     
-    public sorteo(String descripcion, Date fecha, String estado) {
+    public sorteo(String descripcion, String fecha, String estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.estado = estado;
@@ -18,10 +18,10 @@ public class sorteo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
     public String getEstado() {
