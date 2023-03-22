@@ -16,6 +16,15 @@
     <section class="section is medium">
         <div class="container">
             <h1 class="title is-1 has-text-centered">Crear Usuario</h1>
+            <form action="#" th:action="@{/createUser}" th:object="${newuser}" method="post">
+              <label>Nombre</label>
+              <input type="text" placeholder="Nombre" th:field="*{firstName}"/>
+              <label>Apellido</label>
+              <input type="text" placeholder="Apellido" th:field="*{lastName1}"/>
+              <label>Segundo Apellido</label>
+              <input type="text" placeholder="Apellido" th:field="*{lastName2}"/>
+              <button type="submit">Crear</button>
+            </form>
         </div>
     </section>
   </body>
