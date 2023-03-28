@@ -4,14 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/icons/parking-lot.png" />
+    <link rel="shortcut icon" href="images/logocpifp.jpeg"> 
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
     <link rel="stylesheet" th:href="@{/styles/main.css}" />
-    <title>Usuarios</title>
+    <title>Gestion Usuarios</title>
   </head>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+  h1  {text-align: center;font-family: 'Lexend Deca', sans-serif;}
+  a {font-family: 'Lexend Deca', sans-serif;}
+  th {font-family: 'Lexend Deca', sans-serif;}
+  td {font-family: 'Lexend Deca', sans-serif;}
+  body {
+      background-image:url('https://cdn.wallpapersafari.com/71/21/6EQwJu.jpg')
+
+    }
+  </style>
   <body>
     <section class="section is-medium">
       <div class="container">
@@ -22,6 +33,7 @@
               <th>Nombre</th>
               <th>Primer apellido</th>
               <th>Segundo apellido</th>
+              <th>Rol</th>
             </tr>
           </thead>
           <tbody>
@@ -29,6 +41,7 @@
               <td th:text="${user.firstName}"></td>
               <td th:text="${user.lastName1}"></td>
               <td th:text="${user.lastName2}"></td>
+              <td th:text="${user.role}"></td>
             </tr>
           </tbody>
         </table>
