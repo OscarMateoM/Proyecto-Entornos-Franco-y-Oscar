@@ -13,9 +13,10 @@
     <title>Registro</title>
   </head>
   <body>
+    <h1 id="titulo">Parking TechPark</h1>
     <section class="section is medium">
         <div class="container">
-            <h1 class="title is-1 has-text-centered">Crear Usuario</h1>
+            <h2 class="title is-1 has-text-centered">Crear Usuario</h2>
             <form action="#" th:action="@{/createUser}" th:object="${newuser}" method="post">
               <label>Nombre</label>
               <input type="text" placeholder="Nombre" th:field="*{firstName}"/>

@@ -4,36 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/style/Estilo.css}" />
     <link rel="icon" type="image/x-icon" href="/icons/parking-lot.png" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" th:href="@{/styles/main.css}" />
-    <title>Usuarios</title>
+    <title>Sorteos</title>
   </head>
   <body>
     <h1 id="titulo">Parking TechPark</h1>
     <section class="section is-medium">
       <div class="container">
-        <h2 class="title is-1 has-text-centered">Usuarios del parking</h2>
+        <h1 class="title is-1 has-text-centered">Sorteos Realizados</h1>
         <table class="table is-bordered is-fullwidth">
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Primer apellido</th>
-              <th>Segundo apellido</th>
+              <th>Descripcion</th>
+              <th>Fecha</th>
+              <th>Estado</th>
             </tr>
           </thead>
           <tbody>
-            <tr th:each="user:${users}">
-              <td th:text="${user.firstName}"></td>
-              <td th:text="${user.lastName1}"></td>
-              <td th:text="${user.lastName2}"></td>
+            <tr th:each="sorteo:${sorteo}">
+              <td th:text="${sorteo.descripcion}"></td>
+              <td th:text="${sorteo.fecha}"></td>
+              <td th:text="${sorteo.estado}"></td>
             </tr>
           </tbody>
         </table>
-        <a href="newUser"><button class="is-primary">Crear Usuario</button></a>
       </div>
     </section>
   </body>
