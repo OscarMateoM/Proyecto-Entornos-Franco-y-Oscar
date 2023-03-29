@@ -14,16 +14,18 @@ public class User {
     private String firstName;
     private String lastName1;
     private String lastName2;
+    private String email;
     private String role;
 
     public User() {
-        this("","","","");
+        this("", "", "", "", "");
     }
 
-    public User(String firstName, String lastName1, String lastName2, String role) {
+    public User(String firstName, String lastName1, String lastName2, String email, String role) {
         this.firstName = firstName;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.email = email;
         this.role = role;
     }
 
@@ -56,6 +58,14 @@ public class User {
         this.lastName2 = lastName2;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getRole() {
         return role;
@@ -67,6 +77,6 @@ public class User {
     }
 
     public String getFullName() {
-        return this.firstName + " " + this.lastName1 + " " + this.lastName2;
+        return this.firstName + " " + this.lastName1 + " " + this.lastName2 + " " + this.email;
     }
 }

@@ -16,22 +16,54 @@
       background-image:url('https://cdn.wallpapersafari.com/71/21/6EQwJu.jpg')
 
     }
+    header {
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+nav {
+  float: left;
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden; 
+}
+
+nav ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+nav ul li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+nav ul li:hover {
+  background: #00a881;
+}
   </style>
 <body>
 
     <h2> <img src="images/logocpifp.jpeg" alt="logo cpifp nuevo" width="100" height="100"> </h2>
       <h1>Sorteo Parking TechPark</h1>
-    <ul>
+        <nav>
+        <ul>
         <li>
-            <a href="usuarios"> <img src="images/usuarios.png" width="100" height="100"/>
+            <a href="usuarios"> <img src="images/usuarios.png" width="50" height="50"/>
                 Gestion de Usuarios
             </a>
         </li>
         <li>
-            <a href="sorteos"> <img src="images/sorteo.png" width="100" height="100"/>
+            <a href="sorteos"> <img src="images/sorteo.png" width="50" height="50"/>
                 Gestion de Sorteo
             </a>
         </li>
     </ul>
+</nav>
 </body>
 </html>

@@ -5,16 +5,19 @@ public class UserDao {
     private String firstName;
     private String lastName1;
     private String lastName2;
+    private String email;
     private String role;
+    
 
     public UserDao() {
-        this("", "", "", "");
+        this("", "", "", "", "");
     }
 
-    public UserDao(String firstName, String lastName1, String lastName2, String role) {
+    public UserDao(String firstName, String lastName1, String lastName2, String email, String role) {
         this.firstName = firstName;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.email = email;
         this.role = role;
     }
 
@@ -40,6 +43,14 @@ public class UserDao {
 
     public void setLastName2(String lastName2) {
         this.lastName2 = lastName2;
+    }
+
+    public String getemail() {
+        return email;
+    }
+
+    public void setemail(String email) {
+        this.email = email;
     }
 
     public String getRole() {
