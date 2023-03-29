@@ -12,7 +12,7 @@ public class testUser {
     @Test
     public void check_user_name() {
         // Arrange
-        User oscar = new User("Oscar", "Mateo",  "Martin", null);
+        User oscar = new User("Oscar", "Mateo",  "Martin", "oscar@gmail.com", null);
         String expected = "Oscar";
 
         // Act
