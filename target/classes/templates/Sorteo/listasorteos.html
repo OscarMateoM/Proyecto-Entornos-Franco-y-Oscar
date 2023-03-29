@@ -1,0 +1,99 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/style/Estilo.css}" />
+    <link rel="icon" type="image/x-icon" href="/icons/parking-lot.png" />
+    <title>Sorteos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+          h1  {text-align: center;font-family: 'Lexend Deca', sans-serif;}
+          h2  {text-align: center;font-family: 'Lexend Deca', sans-serif; margin-top: 8%;}
+          a {font-family: 'Lexend Deca', sans-serif;}
+          table {width: 80%; background-color: rgba(0, 0, 0, 0.453);}
+          th {font-family: 'Lexend Deca', sans-serif; background-color: aliceblue; text-align: center; font-size: large; height: 50px; background-color: rgba(2, 190, 228, 0.577);}
+          td {font-family: 'Lexend Deca', sans-serif; background-color: aliceblue; text-align: center; height: 40px; background-color: rgba(26, 217, 255, 0.062);}
+          body {
+            background: rgb(81,159,159);
+            background: linear-gradient(90deg, rgba(81,159,159,1) 15%, rgba(0,237,255,1) 56%, rgba(2,189,228,1) 87%);
+        
+            }
+            header {
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+nav {
+  float: left;
+  margin-left: 34%;
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden; 
+}
+
+nav ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+nav ul li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+nav ul li:hover {
+  background: #00a881;
+}
+          </style>
+  </head>
+  <body>
+    <h1 id="titulo">Parking TechPark</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="usuarios" style="color: black;"> <img src="images/usuarios.png" width="50" height="50"/>
+                    <b>Gestion de Usuarios</b>
+                </a>
+            </li>
+            <li>
+                <a href="sorteos" style="color: black;"> <img src="images/sorteo.png" width="50" height="50"/>
+                    <b>Gestion de Sorteo</b>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+<br/>
+    <section class="section is-medium">
+      <div class="container">
+        <h2 class="title is-1 has-text-centered">Sorteos Realizados</h2>
+        <center>
+        <table class="table is-bordered is-fullwidth">
+          <thead>
+            <tr>
+              <th>Descripcion</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="sorteo:${sorteo}">
+              <td th:text="${sorteo.descripcion}"></td>
+              <td th:text="${sorteo.fecha}"></td>
+              <td th:text="${sorteo.estado}"></td>
+            </tr>
+          </tbody>
+        </table>
+        </center>
+      </div>
+    </section>
+  </body>
+</html>

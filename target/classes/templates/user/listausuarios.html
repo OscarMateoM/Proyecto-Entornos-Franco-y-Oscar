@@ -1,0 +1,144 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logocpifp.jpeg"> 
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+    <title>Gestion Usuarios</title>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+      h1  {text-align: center;font-family: 'Lexend Deca', sans-serif;}
+      h2  {text-align: center;font-family: 'Lexend Deca', sans-serif; margin-top: 8%;}
+      a {font-family: 'Lexend Deca', sans-serif;}
+      table {width: 80%; background-color: rgba(0, 0, 0, 0.453);}
+        th {font-family: 'Lexend Deca', sans-serif; background-color: aliceblue; text-align: center; font-size: large; height: 50px; background-color: rgba(2, 190, 228, 0.577);}
+        td {font-family: 'Lexend Deca', sans-serif; background-color: aliceblue; text-align: center; height: 40px; background-color: rgba(26, 217, 255, 0.062);}
+      body {
+        background: rgb(81,159,159);
+        background: linear-gradient(90deg, rgba(81,159,159,1) 15%, rgba(0,237,255,1) 56%, rgba(2,189,228,1) 87%);
+    
+      }
+
+      button {
+        appearance: none;
+        background-color: #000000;
+        border: 2px solid #1A1A1A;
+        border-radius: 15px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+        min-height: 60px;
+        min-width: 0;
+        outline: none;
+        padding: 16px 24px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 10%;
+        will-change: transform;
+        margin-left: 45%;
+        margin-top: 5%;
+      }
+
+      button:disabled {
+        pointer-events: none;
+      }
+
+      button:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+      }
+
+      button:active {
+        box-shadow: none;
+        transform: translateY(0);
+      }
+      header {
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+nav {
+  float: left;
+  margin-left: 34%;
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden; 
+}
+
+nav ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+nav ul li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+nav ul li:hover {
+  background: #00a881;
+}
+      </style>
+  <body>
+    <h1 id="titulo">Parking TechPark</h1>
+    <nav>
+      <ul>
+      <li>
+          <a href="usuarios" style="color: #000000;"> <img src="images/usuarios.png" width="50" height="50"/>
+              <b>Gestion de Usuarios</b>
+          </a>
+      </li>
+      <li>
+          <a href="sorteos" style="color: #000000;"> <img src="images/sorteo.png" width="50" height="50"/>
+              <b>Gestion de Sorteo</b>
+          </a>
+      </li>
+  </ul>
+</nav>
+<br/>
+    <section class="section is-medium">
+      <div class="container">
+        <h2 class="title is-1 has-text-centered">Usuarios del parking</h2>
+        <center>
+        <table class="table is-bordered is-fullwidth">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Primer apellido</th>
+              <th>Segundo apellido</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="user:${users}">
+              <td th:text="${user.firstName}"></td>
+              <td th:text="${user.lastName1}"></td>
+              <td th:text="${user.lastName2}"></td>
+              <td th:text="${user.email}" />
+            </tr>
+          </tbody>
+        </table>
+        </center>
+        <a href="newUser"><button class="is-primary">Crear Usuario</button></a>
+      </div>
+    </section>
+  </body>
+</html>
