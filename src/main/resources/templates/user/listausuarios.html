@@ -124,6 +124,7 @@ nav ul li:hover {
               <th>Nombre</th>
               <th>Primer apellido</th>
               <th>Segundo apellido</th>
+              <th>Rol</th>
               <th>Email</th>
             </tr>
           </thead>
@@ -132,6 +133,7 @@ nav ul li:hover {
               <td th:text="${user.firstName}"></td>
               <td th:text="${user.lastName1}"></td>
               <td th:text="${user.lastName2}"></td>
+              <td th:text="${user.role}"></td>
               <td th:text="${user.email}" />
             </tr>
           </tbody>
