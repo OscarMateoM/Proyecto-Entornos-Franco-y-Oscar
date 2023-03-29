@@ -18,13 +18,13 @@ public class sorteoServiceImpl implements sorteoService{
     }
 
     @Override
-    public void register(sorteoDao userDao) {
+    public void register(sorteoDao sorteosDao) {
         
         sorteo sorteos = new sorteo();
 
-        BeanUtils.copyProperties(userDao, user);
+        BeanUtils.copyProperties(sorteosDao, sorteos);
 
-        this.UserRepository.save(user);
+        this.sorteoRepository.save(sorteos);
     }
     
 }

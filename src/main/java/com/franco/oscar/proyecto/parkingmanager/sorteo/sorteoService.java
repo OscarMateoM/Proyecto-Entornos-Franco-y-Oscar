@@ -4,5 +4,5 @@ public interface sorteoService {
     
     public Iterable<sorteo> getAll();
 
-    public void register(sorteoDao sorteoDao);
+    public void register(sorteoDao sorteosDao);
 }
