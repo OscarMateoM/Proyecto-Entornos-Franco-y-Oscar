@@ -43,18 +43,4 @@ public class sorteoTest {
         assertEquals(expected,actual);
     }
 
-    @Test
-    void testSetDescripcion() {
-
-    }
-
-    @Test
-    void testSetEstado() {
-
-    }
-
-    @Test
-    void testSetFecha() {
-
-    }
 }
