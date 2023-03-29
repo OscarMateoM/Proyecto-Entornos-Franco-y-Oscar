@@ -18,8 +18,8 @@ public class UserTest {
     @Test
     void testGetFullName() {
         //Arrange
-        User user = new User("Manuel","Perez","Gonzalez","Alumno","manuel@hotmail.com");
-        String expected = "Manuel Perez Gonzalez";
+        User user = new User("Manuel","Perez","Gonzalez","manuel@hotmail.com","Alumno");
+        String expected = "Manuel Perez Gonzalez manuel@hotmail.com";
         //Act
         String actual = user.getFullName();
         //Assert
@@ -51,7 +51,7 @@ public class UserTest {
     @Test
     void testGetRole() {
         //Arrange
-        User user = new User("Manuel","Perez","Gonzalez","Alumno","manuel@hotmail.com");
+        User user = new User("Manuel","Perez","Gonzalez","manuel@hotmail.com","Alumno");
         String expected = "Alumno";
         //Act
         String actual = user.getRole();
