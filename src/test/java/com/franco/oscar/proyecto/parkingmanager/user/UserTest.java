@@ -7,7 +7,7 @@ public class UserTest {
     @Test
     void testGetFirstName() {
         //Arrange
-        User user = new User("Manuel","Perez","Gonzalez","Alumno");
+        User user = new User("Manuel","Perez","Gonzalez","Alumno","manuel@hotmail.com");
         String expected = "Manuel";
         //Act
         String actual = user.getFirstName();
@@ -18,7 +18,7 @@ public class UserTest {
     @Test
     void testGetFullName() {
         //Arrange
-        User user = new User("Manuel","Perez","Gonzalez","Alumno");
+        User user = new User("Manuel","Perez","Gonzalez","Alumno","manuel@hotmail.com");
         String expected = "Manuel Perez Gonzalez";
         //Act
         String actual = user.getFullName();
@@ -29,7 +29,7 @@ public class UserTest {
     @Test
     void testGetLastName1() {
         //Arrange
-        User user = new User("Manuel","Perez","Gonzalez","Alumno");
+        User user = new User("Manuel","Perez","Gonzalez","Alumno","manuel@hotmail.com");
         String expected = "Perez";
         //Act
         String actual = user.getLastName1();
@@ -40,7 +40,7 @@ public class UserTest {
     @Test
     void testGetLastName2() {
         //Arrange
-        User user = new User("Manuel","Perez","Gonzalez","Alumno");
+        User user = new User("Manuel","Perez","Gonzalez","Alumno","manuel@hotmail.com");
         String expected = "Gonzalez";
         //Act
         String actual = user.getLastName2();
@@ -51,7 +51,7 @@ public class UserTest {
     @Test
     void testGetRole() {
         //Arrange
-        User user = new User("Manuel","Perez","Gonzalez","Alumno");
+        User user = new User("Manuel","Perez","Gonzalez","Alumno","manuel@hotmail.com");
         String expected = "Alumno";
         //Act
         String actual = user.getRole();
