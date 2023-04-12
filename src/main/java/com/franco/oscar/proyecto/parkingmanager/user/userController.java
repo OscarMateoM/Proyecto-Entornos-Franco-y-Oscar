@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+/**
+ * @author Franco y Oscar
+ * @version 0.1
+ * Controla la informacion de usuario
+ */
+
 @Controller
 public class userController {
     
@@ -19,12 +25,24 @@ public class userController {
     @Autowired
     private userRepository repository;
 
+    
+    /** 
+     * Muestra la pagina usuarios con la lista de los mismos
+     * @param model
+     * @return String
+     */
     @GetMapping("/usuarios")
     public String displayUsers(Model model) {
         model.addAttribute( "users", repository.findAll());
         return "user/listausuarios";
     }
 
+    
+    /** 
+     * Muestra la pagina para la creacion de nuevo usuario
+     * @param model
+     * @return String
+     */
     @GetMapping("/newUser")
     public String showUserCreateForm(Model model) {
 
@@ -35,6 +53,12 @@ public class userController {
         return "user/newuserform";
     }
 
+    
+    /** 
+     * Redirige a la pagina con la lista de usuarios luego de crear un usuario nuevo
+     * @param userDao
+     * @return String
+     */
     @PostMapping("/createUser")
     public String createUser(@ModelAttribute UserDao userDao) {
         this.userService.register(userDao);
