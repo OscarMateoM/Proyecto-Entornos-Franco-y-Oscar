@@ -2,7 +2,6 @@ package com.franco.oscar.proyecto.parkingmanager.user;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
 /**
  * @author Franco y Oscar
  * @version 0.1

@@ -1,9 +1,16 @@
 package com.franco.oscar.proyecto.parkingmanager.user;
 
+import java.util.Set;
+
+import com.franco.oscar.proyecto.parkingmanager.sorteo.sorteo;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 /**
  * @author Franco y Oscar
@@ -21,13 +28,21 @@ public class User {
     private String lastName1;
     private String lastName2;
     private String email;
-    private String role;
+    private Role role;
+   @ManyToMany
+   @JoinTable(
+        name="users_assigned",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name="sorteo_id")
+   )
+    private Set<sorteo> includedIn;
+
 
     public User() {
-        this("", "", "", "", "");
+        this("", "", "", "", null);
     }
 
-    public User(String firstName, String lastName1, String lastName2, String email, String role) {
+    public User(String firstName, String lastName1, String lastName2, String email, Role role) {
         this.firstName = firstName;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
@@ -117,7 +132,7 @@ public class User {
      * Devuelve role
      * @return String
      */
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
@@ -127,10 +142,9 @@ public class User {
      * Asigna role
      * @param role
      */
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
-
     
     /** 
      * Devuelve FullName

@@ -1,9 +1,14 @@
 package com.franco.oscar.proyecto.parkingmanager.sorteo;
 
+import java.util.Set;
+
+import com.franco.oscar.proyecto.parkingmanager.user.User;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 /**
  * @author Franco y Oscar
@@ -20,6 +25,8 @@ public class sorteo {
     private String descripcion;
     private String fecha;
     private String estado;
+    @ManyToMany(mappedBy = "includedIn")
+    private Set<User> usersincluded;
 
     public sorteo() {
         this("","","");
