@@ -1,4 +1,7 @@
 package com.franco.oscar.proyecto.parkingmanager.user;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 
 /**
  * @author Franco y Oscar
@@ -7,10 +10,13 @@ package com.franco.oscar.proyecto.parkingmanager.user;
  */
 
 public class UserDao {
-    
+    @NotBlank(message = "El nombre es obligatorio")
     private String firstName;
+    @NotBlank(message = "El primer apellido es obligatorio")
     private String lastName1;
     private String lastName2;
+    @Email(message = "El formato del correo no es adecudado")
+    @NotBlank(message = "El correo no puede ser vacio")
     private String email;
     private String role;
     
