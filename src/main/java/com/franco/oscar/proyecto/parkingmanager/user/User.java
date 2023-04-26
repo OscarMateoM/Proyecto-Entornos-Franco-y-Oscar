@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.franco.oscar.proyecto.parkingmanager.sorteo.sorteo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,6 +28,7 @@ public class User {
     private String firstName;
     private String lastName1;
     private String lastName2;
+    @Column(unique = true)
     private String email;
     private Role role;
    @ManyToMany
