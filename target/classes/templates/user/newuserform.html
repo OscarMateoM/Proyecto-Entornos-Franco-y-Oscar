@@ -123,6 +123,11 @@
             <h2 class="title is-1 has-text-centered">Crear Usuario</h2>
             <center>
             <form action="#" th:action="@{/createUser}" th:object="${newuser}" method="post">
+
+              <div th:if="${#fields.hasErrors('*')}"> 
+                <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p> 
+            </div>
+
               <input type="text" placeholder="Nombre" th:field="*{firstName}"/><br/>
 
               <input type="text" placeholder="Apellido" th:field="*{lastName1}"/><br/>
