@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
      */
     @Override
     public void register(UserDao userDao) throws UserExistsException{
-        if(userExists(userDao.getemail()) {
+        if(userExists(userDao.getemail())) {
             throw new UserExistsException();
         }
 
@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public boolean userExists(String email) {
-        return this.UserRepository.findByEmail(email) != null ? true : false;
+        return this.UserRepository.findByemail(email) != null ? true : false;
     }
     
 }

@@ -3,6 +3,7 @@ package com.franco.oscar.proyecto.parkingmanager.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -62,11 +63,19 @@ public class userController {
      * @return String
      */
     @PostMapping("/createUser")
-    public String createUser(@ModelAttribute UserDao userDao) {
+    public String createUser(@ModelAttribute UserDao userDao, BindingResult bindingResult, Model model) {
+        //Si existe error en correo
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("userDao", userDao);
+            return "user/createform";
+        }
         try{
             this.userService.register(userDao);
         } 
+        //Lo que muestra cuando ya existe un usuario con ese correo
         catch (UserExistsException exception) {
+            model.addAttribute("userDao", userDao);
+            bindingResult.reject("email", "Ya existe un usuario con ese correo.");
             return "user/createform";
         }
         return "redirect:/usuarios";
