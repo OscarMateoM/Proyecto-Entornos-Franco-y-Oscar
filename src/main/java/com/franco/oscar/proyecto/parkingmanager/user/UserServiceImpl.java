@@ -3,6 +3,8 @@ package com.franco.oscar.proyecto.parkingmanager.user;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import com.franco.oscar.proyecto.parkingmanager.core.exceptions.UserExistsException;
+
 /**
  * @author Franco y Oscar
  * @version 0.1
@@ -34,13 +36,22 @@ public class UserServiceImpl implements UserService{
      * @param userDao
      */
     @Override
-    public void register(UserDao userDao) {
-        
+    public void register(UserDao userDao) throws UserExistsException{
+        if(userExists(userDao.getemail()) {
+            throw new UserExistsException();
+        }
+
         User user = new User();
 
         BeanUtils.copyProperties(userDao, user);
 
         this.UserRepository.save(user);
+    }
+
+
+    @Override
+    public boolean userExists(String email) {
+        return this.UserRepository.findByEmail(email) != null ? true : false;
     }
     
 }

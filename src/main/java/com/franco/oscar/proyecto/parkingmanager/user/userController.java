@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.franco.oscar.proyecto.parkingmanager.core.exceptions.UserExistsException;
+
 /**
  * @author Franco y Oscar
  * @version 0.1
@@ -61,7 +63,12 @@ public class userController {
      */
     @PostMapping("/createUser")
     public String createUser(@ModelAttribute UserDao userDao) {
-        this.userService.register(userDao);
+        try{
+            this.userService.register(userDao);
+        } 
+        catch (UserExistsException exception) {
+            return "user/createform";
+        }
         return "redirect:/usuarios";
     }
 }
